@@ -1,0 +1,12 @@
+{
+  "name": "@wmhilton/login-with-github-route-handler",
+  "version": "0.0.1",
+  "description": "",
+  "main": "route.js",
+  "keywords": [],
+  "author": "William Hilton <wmhilton@gmail.com>",
+  "license": "Unlicense",
+  "dependencies": {
+    "superagent": "^2.3.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@wmhilton/login-with-github-server",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "node minimal-server.js"
+  },
+  "keywords": [],
+  "author": "William Hilton <wmhilton@gmail.com>",
+  "license": "Unlicense",
+  "dependencies": {
+    "express": "^4.14.0",
+    "@wmhilton/login-with-github-middleware": "0.0.x"
+  }
+}

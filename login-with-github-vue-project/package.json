@@ -1,0 +1,23 @@
+{
+  "name": "@wmhilton/login-with-github-vue-project",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.vue",
+  "keywords": [],
+  "author": "William Hilton <wmhilton@gmail.com>",
+  "license": "Unlicense",
+  "scripts": {
+    "prod": "gulp --production",
+    "start": "gulp watch"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "laravel-elixir": "^5.0.0",
+    "laravel-elixir-vueify": "^1.0.0",
+    "surge": "^0.18.0"
+  },
+  "dependencies": {
+    "@wmhilton/login-with-github-client": "file:///E:\\git\\login-with-github\\login-with-github-client",
+    "@wmhilton/login-with-github-vue-component": "file:///E:\\git\\login-with-github\\login-with-github-vue-component"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@wmhilton/login-with-github-vue-component",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "browser": "component.vue",
+  "keywords": [],
+  "author": "William Hilton <wmhilton@gmail.com>",
+  "license": "Unlicense",
+  "dependencies": {
+    "@wmhilton/login-with-github-client": "0.0.x"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ],
+      [
+        "vueify"
+      ]
+    ]
+  }
+}
