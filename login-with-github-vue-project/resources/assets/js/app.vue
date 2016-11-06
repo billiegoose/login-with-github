@@ -6,11 +6,12 @@
 </template>
 
 <script>
-import LoginWithGithub from '@wmhilton/login-with-github-vue-component/login-with-github-button.vue'
+import { LoginWithGithub } from '@wmhilton/login-with-github-vue-component'
+
 export default {
   name: 'App',
   components: {
-    'login-with-github': LoginWithGithub
+    // 'login-with-github': LoginWithGithub
   }
 }
 </script>
