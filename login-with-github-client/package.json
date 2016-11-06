@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node build.js"
   },
-  "main": "dist/LoginWithGithub.browserify.js",
+  "main": "dist/LoginWithGithub.umd.js",
   "jsnext:main": "dist/LoginWithGithub.es2015.js",
   "keywords": [],
   "author": "William Hilton <wmhilton@gmail.com>",

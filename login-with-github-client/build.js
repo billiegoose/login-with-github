@@ -21,9 +21,4 @@ rollup.rollup({
     dest: 'dist/LoginWithGithub.es2015.js',
     sourceMap: true,
   })
-  bundle.write({
-    format: 'commonjs',
-    dest: 'dist/LoginWithGithub.browserify.js',
-    sourceMap: true,
-  })
 })
