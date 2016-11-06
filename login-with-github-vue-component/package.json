@@ -3,26 +3,13 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "browser": "component.vue",
+  "scripts": {
+    "build": "browserify index.js -t vueify --standalone login-with-github > build/component.js"
+  },
   "keywords": [],
   "author": "William Hilton <wmhilton@gmail.com>",
   "license": "Unlicense",
   "dependencies": {
     "@wmhilton/login-with-github-client": "0.0.x"
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015"
-          ]
-        }
-      ],
-      [
-        "vueify"
-      ]
-    ]
   }
 }
