@@ -10,6 +10,6 @@
   "license": "Unlicense",
   "dependencies": {
     "express": "^4.14.0",
-    "@wmhilton/login-with-github-middleware": "0.0.x"
+    "@wmhilton/login-with-github-route-handler": "0.0.x"
   }
 }
