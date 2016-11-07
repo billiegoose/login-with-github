@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import { LoginWithGithub } from '@wmhilton/login-with-github-vue-component'
-
 export default {
-  name: 'App',
+  data () {
+    return {}
+  },
   components: {
-    // 'login-with-github': LoginWithGithub
+    'login-with-github': require('@wmhilton/login-with-github-vue-component')
   }
 }
 </script>

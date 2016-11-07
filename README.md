@@ -44,3 +44,8 @@ Rollup usage:
 - https://github.com/vjeux/GithubLogin http://blog.vjeux.com/2012/javascript/github-oauth-login-browser-side.html
   I never would have figured out how to do this if not for this article
 - https://zeit.co/now which I had been looking for a project to use with, and Github OAuth server struck me as a brilliant use.
+
+## example vue project
+
+NOTE: uses `vbuild`
+
