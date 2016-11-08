@@ -1,6 +1,6 @@
 {
   "name": "@wmhilton/login-with-github-route-handler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "route.js",
   "keywords": [],
