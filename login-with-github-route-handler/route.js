@@ -1,9 +1,9 @@
 "use strict"
 const request = require('superagent')
 
-error_template = (msg) => `<html><body><pre>msg</pre></body></html>`
+const error_template = (msg) => `<html><body><pre>msg</pre></body></html>`
 
-success_template = (body) => `<html>
+const success_template = (body) => `<html>
 <body>
   <script>
     window.opener.postMessage(${JSON.stringify(body)}, '*')
@@ -32,7 +32,7 @@ const routeHandler = (options) => {
       return client_res.status(200).type('html').send(success_template({
         state: req.params.state,
         access_token: github_res.body.access_token
-      })
+      }))
     })
   }
 }
