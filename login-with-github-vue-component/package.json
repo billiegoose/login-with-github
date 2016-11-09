@@ -5,7 +5,7 @@
   "main": "build/component.js",
   "scripts": {
     "build": "vue-compiler --out build src/component.vue",
-    "publish": "npm run build && npm publish --access public --registry=https://registry.npmjs.org/"
+    "release": "npm run build && npm publish --access public --registry=https://registry.npmjs.org/"
   },
   "keywords": [],
   "author": "William Hilton <wmhilton@gmail.com>",
