@@ -8,7 +8,7 @@ function generateLoginLink ({client_id, state}) {
   return 'https://github.com/login/oauth/authorize?client_id=' + client_id + '&state=' + state
 }
 
-export default function ({client_id}) {
+export default function LoginWithGithub ({client_id}) {
   let state = initState()
   let url = generateLoginLink({client_id, state})
   let mychild = window.open(url)
