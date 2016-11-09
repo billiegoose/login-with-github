@@ -1,9 +1,10 @@
 {
   "name": "@wmhilton/login-with-github-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "scripts": {
-    "start": "node minimal-server.js"
+    "start": "node minimal-server.js",
+    "release": "npm publish --access public --registry=https://registry.npmjs.org/"
   },
   "keywords": [],
   "author": "William Hilton <wmhilton@gmail.com>",
