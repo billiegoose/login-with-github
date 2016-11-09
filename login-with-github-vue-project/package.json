@@ -10,7 +10,8 @@
     "build": "vbuild"
   },
   "dependencies": {
-    "@wmhilton/login-with-github-vue-component": "0.0.3",
+    "@wmhilton/login-with-github-vue-component": "0.0.4",
+    "prismjs": "^1.5.1",
     "vue": "^2.0.0"
   }
 }

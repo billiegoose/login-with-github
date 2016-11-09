@@ -21,11 +21,8 @@ exports.default = {
 
   props: ['client_id', 'button_class', 'icon_class'],
   computed: {
-    text: function text() {
-      if (this.has_error) {
-        return this.error_string;
-      }
-      return this.auth_token ? 'Logout' : 'Logout';
+    logged_in: function logged_in() {
+      return this.auth_token ? true : false;
     }
   },
   methods: {
@@ -53,8 +50,8 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function(){with(this){return _h('button',{class:button_class,on:{"click":login}},[_h('i',{class:icon_class}),"\n  "+_s(text)+"\n"])}}
-__vue__options__.staticRenderFns = []
+__vue__options__.render = function(){with(this){return _h('span',{staticClass:"login-with-github",on:{"click":toggle}},[(!logged_in)?_t("login",[_m(0)]):_t("logout",[_h('button',{staticClass:"btn btn-default"},[_h('i',{staticClass:"fa fa-github"}),"\n      Log Out\n    "])])," "])}}
+__vue__options__.staticRenderFns = [function(){with(this){return _h('button',{staticClass:"btn btn-primary"},[_h('i',{staticClass:"fa fa-github"}),"\n      Log In With Github\n    "])}}]
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
