@@ -8,20 +8,15 @@ function initState() {
   return window.crypto.getRandomValues(new Uint8Array(8)).toString();
 }
 
-function generateLoginLink(_ref) {
-  var client_id = _ref.client_id,
-      state = _ref.state;
-
+function generateLoginLink({ client_id, state }) {
   return 'https://github.com/login/oauth/authorize?client_id=' + client_id + '&state=' + state;
 }
 
-function waitForPopup(_ref2) {
-  var client_id = _ref2.client_id;
-
-  var state = initState();
-  var url = generateLoginLink({ client_id: client_id, state: state });
-  var mychild = window.open(url);
-  new Promise(function (resolve, reject) {
+var LoginWithGithub = function ({ client_id }) {
+  let state = initState();
+  let url = generateLoginLink({ client_id, state });
+  let mychild = window.open(url);
+  return new Promise(function (resolve, reject) {
     window.addEventListener('message', function (event) {
       // Validate sender
       if (event.source !== mychild) {
@@ -42,9 +37,9 @@ function waitForPopup(_ref2) {
       }
     });
   });
-}
+};
 
-return waitForPopup;
+return LoginWithGithub;
 
 })));
 //# sourceMappingURL=LoginWithGithub.umd.js.map
