@@ -1,8 +1,18 @@
 <template>
-  <button @click="login" :class="button_class">
-    <i :class="icon_class"></i>
-    {{ text }}
-  </button>
+  <span @click="toggle" class="login-with-github">
+    <slot name="login" v-if="!logged_in">
+      <button class="btn btn-primary">
+        <i class="fa fa-github"></i>
+        Log In With Github
+      </button>
+    </slot>
+    <slot name="logout" v-else>
+      <button class="btn btn-default">
+        <i class="fa fa-github"></i>
+        Log Out
+      </button>
+    </slot>
+  </span>
 </template>
 
 <script>
@@ -17,11 +27,8 @@ export default {
   },
   props: ['client_id', 'button_class', 'icon_class'],
   computed: {
-    text () {
-      if (this.has_error) {
-        return this.error_string
-      }
-      return (this.auth_token) ? 'Logout' :'Logout'
+    logged_in () {
+      return (this.auth_token ? true : false)
     }
   },
   methods: {
