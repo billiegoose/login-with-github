@@ -23,11 +23,7 @@ export default function LoginWithGithub ({client_id}) {
         if (event.data.state !== state) {
           return reject('state variable mismatch')
         }
-        resolve({
-          client_id: client_id,
-          code: event.data.code,
-          state: state
-        })
+        resolve(github_res.body.access_token)
       } else {
         reject(event)
       }
