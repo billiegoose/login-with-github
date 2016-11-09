@@ -1,6 +1,6 @@
 {
   "name": "@wmhilton/login-with-github-client",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "scripts": {
     "build": "babel src --out-dir build",
