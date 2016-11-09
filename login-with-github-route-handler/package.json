@@ -1,8 +1,11 @@
 {
   "name": "@wmhilton/login-with-github-route-handler",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "route.js",
+  "scripts": {
+    "release": "npm publish --access public --registry=https://registry.npmjs.org/"
+  },
   "keywords": [],
   "author": "William Hilton <wmhilton@gmail.com>",
   "license": "Unlicense",
