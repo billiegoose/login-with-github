@@ -8,7 +8,7 @@
   "scripts": {
     "build": "vbuild",
     "start": "vbuild --dev",
-    "deploy": "surge -p dist --domain login-with-github-vue-project.surge.sh"
+    "deploy": "npm run build && surge -p dist --domain login-with-github-vue-project.surge.sh"
   },
   "devDependencies": {
     "@wmhilton/login-with-github-vue-component": "0.0.4",
