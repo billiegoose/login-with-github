@@ -45,7 +45,7 @@
           if (event.data.state !== state) {
             return reject('state variable mismatch');
           }
-          resolve(github_res.body.access_token);
+          resolve(event.data.access_token);
         } else {
           reject(event);
         }

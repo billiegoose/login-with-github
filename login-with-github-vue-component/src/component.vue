@@ -25,7 +25,7 @@ export default {
       auth_token: null
     }
   },
-  props: ['client_id', 'button_class', 'icon_class'],
+  props: ['client_id'],
   computed: {
     logged_in () {
       return (this.auth_token ? true : false)
@@ -43,7 +43,7 @@ export default {
       .then(function (auth_token) {
         // localStorage.auth_token = auth_token
         self.auth_token = auth_token
-        self.$emit('login')
+        self.$emit('login', auth_token)
       })
       .catch(function () {
         self.$emit('error')

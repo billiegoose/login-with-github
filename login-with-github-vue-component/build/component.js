@@ -19,7 +19,7 @@ exports.default = {
     };
   },
 
-  props: ['client_id', 'button_class', 'icon_class'],
+  props: ['client_id'],
   computed: {
     logged_in: function logged_in() {
       return this.auth_token ? true : false;
@@ -35,7 +35,7 @@ exports.default = {
         client_id: this.client_id
       }).then(function (auth_token) {
         self.auth_token = auth_token;
-        self.$emit('login');
+        self.$emit('login', auth_token);
       }).catch(function () {
         self.$emit('error');
       });
