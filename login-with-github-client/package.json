@@ -1,9 +1,10 @@
 {
   "name": "@wmhilton/login-with-github-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "publish": "npm run build && npm publish --access public --registry=https://registry.npmjs.org/"
   },
   "main": "dist/LoginWithGithub.umd.js",
   "jsnext:main": "dist/LoginWithGithub.es2015.js",
