@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "node minimal-server.js",
-    "release": "npm publish --access public --registry=https://registry.npmjs.org/"
+    "release": "npm publish --access public --registry=https://registry.npmjs.org/",
+    "deploy": "now deploy -e CLIENT_ID=@client-id -e CLIENT_SECRET=@client-secret"
   },
   "keywords": [],
   "author": "William Hilton <wmhilton@gmail.com>",
