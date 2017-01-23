@@ -19,7 +19,7 @@ exports.default = {
     };
   },
 
-  props: ['client_id'],
+  props: ['client_id', 'scope'],
   computed: {
     logged_in: function logged_in() {
       return this.auth_token ? true : false;
@@ -32,8 +32,10 @@ exports.default = {
     login: function login() {
       self = this;
       (0, _loginWithGithubClient2.default)({
-        client_id: this.client_id
+        client_id: this.client_id,
+        scope: this.scope
       }).then(function (auth_token) {
+        sessionStorage.auth_token = auth_token;
         self.auth_token = auth_token;
         self.$emit('login', auth_token);
       }).catch(function () {
@@ -42,9 +44,15 @@ exports.default = {
     },
     logout: function logout() {
       self.auth_token = null;
+      delete sessionStorage.auth_token;
     }
   },
-  ready: function ready() {}
+  beforeMount: function beforeMount() {
+    if (sessionStorage && sessionStorage.hasOwnProperty('auth_token')) {
+      this.auth_token = sessionStorage.auth_token;
+      this.$emit('login', this.auth_token);
+    }
+  }
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default

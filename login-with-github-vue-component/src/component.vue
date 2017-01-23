@@ -25,7 +25,7 @@ export default {
       auth_token: null
     }
   },
-  props: ['client_id'],
+  props: ['client_id', 'scope'],
   computed: {
     logged_in () {
       return (this.auth_token ? true : false)
@@ -38,10 +38,11 @@ export default {
     login () {
       self = this
       LoginWithGithub({
-        client_id: this.client_id
+        client_id: this.client_id,
+        scope: this.scope
       })
       .then(function (auth_token) {
-        // localStorage.auth_token = auth_token
+        sessionStorage.auth_token = auth_token
         self.auth_token = auth_token
         self.$emit('login', auth_token)
       })
@@ -51,11 +52,14 @@ export default {
     },
     logout () {
       self.auth_token = null
-      // delete localStorage.auth_token
+      delete sessionStorage.auth_token
     },
   },
-  ready () {
-    // this.auth_token = localStorage.auth_token
+  beforeMount () {
+    if (sessionStorage && sessionStorage.hasOwnProperty('auth_token')) {
+      this.auth_token = sessionStorage.auth_token
+      this.$emit('login', this.auth_token)
+    }
   },
 }
 </script>

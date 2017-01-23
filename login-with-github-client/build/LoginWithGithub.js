@@ -23,16 +23,22 @@
 
   function generateLoginLink(_ref) {
     var client_id = _ref.client_id,
-        state = _ref.state;
+        state = _ref.state,
+        scope = _ref.scope;
 
-    return 'https://github.com/login/oauth/authorize?client_id=' + client_id + '&state=' + state;
+    var link = 'https://github.com/login/oauth/authorize?client_id=' + client_id + '&state=' + state;
+    if (typeof scope === 'string') {
+      link += '&scope=' + scope;
+    }
+    return link;
   }
 
   function LoginWithGithub(_ref2) {
-    var client_id = _ref2.client_id;
+    var client_id = _ref2.client_id,
+        scope = _ref2.scope;
 
     var state = initState();
-    var url = generateLoginLink({ client_id: client_id, state: state });
+    var url = generateLoginLink({ client_id: client_id, state: state, scope: scope });
     var mychild = window.open(url);
     return new Promise(function (resolve, reject) {
       window.addEventListener('message', function (event) {
